@@ -6,10 +6,10 @@ from sqlalchemy.orm import sessionmaker
 import datetime
 from sqlalchemy import Column, Integer, String, JSON, TIMESTAMP
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
-# Replace this with your actual PostgreSQL URL
-SQLALCHEMY_DATABASE_URL = "postgresql+psycopg2://postgres:yifouwchte@<host>:5432/cloudsec_db
-"
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
