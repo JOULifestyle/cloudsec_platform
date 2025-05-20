@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from cwpp import runtime_monitor
-from schemas.runtime import RuntimeEventResponse  # We’ll create this next
+from cwpp.runtime_monitor import RuntimeEventResponse  # We’ll create this next
 import logging
 
 router = APIRouter()
