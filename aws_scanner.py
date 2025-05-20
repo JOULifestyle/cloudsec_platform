@@ -5,9 +5,9 @@ from database import insert_cspm_finding
 
 router = APIRouter()
 
-ec2 = boto3.client('ec2')
-s3 = boto3.client('s3')
-iam = boto3.client('iam')
+ec2 = boto3.client('ec2', region_name='us-east-1')
+s3 = boto3.client('s3', region_name='us-east-1')
+iam = boto3.client('iam', region_name='us-east-1')
 
 @router.get("/scan/ec2")
 def scan_ec2():
